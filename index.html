@@ -1,1412 +1,532 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.125.4"><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-<link rel="icon" href=images/portimg.svg type="image/gif">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
->
-<link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      media="print" onload="this.media='all'" />
-<noscript>
-  <link
-          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-          rel="stylesheet">
-</noscript>
-
-
-<link rel="stylesheet" href="/css/font.css" media="all">
-
-
-
-  
-
-
-<meta property="og:url" content="https://indrat97.github.io/">
-  <meta property="og:site_name" content="Indrajeet Thakare">
-  <meta property="og:title" content="Indrajeet Thakare">
-  <meta property="og:description" content="Text about my cool site">
-  <meta property="og:locale" content="en-us">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indrajeet Thakare — Supply Chain Analytics & Data Engineering</title>
+  <meta name="description" content="Indrajeet Thakare — Supply Chain Analytics and Data Engineering. Inventory optimisation, demand forecasting, and supply chain data pipelines. Experience at Levare, Tesla, and Blinkit.">
+  <link rel="icon" href="fav.png" type="image/png">
+  <meta property="og:title" content="Indrajeet Thakare — Supply Chain Analytics & Data Engineering">
+  <meta property="og:description" content="Inventory optimisation, demand forecasting, and supply chain data pipelines. Experience at Levare, Tesla, and Blinkit.">
   <meta property="og:type" content="website">
-
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Indrajeet Thakare">
-<meta name="twitter:description" content="Text about my cool site">
-
-
-<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
-<link rel="stylesheet" href="/css/footer.css" media="all">
-
-
-<link rel="stylesheet" href="/css/theme.css" media="all">
-
-
-
-
-<style>
+  <meta property="og:url" content="https://indrat97.github.io/">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    /* ── Tokens ─────────────────────────────────── */
     :root {
-        --text-color: #343a40;
-        --text-secondary-color: #6c757d;
-        --background-color: #eaedf0;
-        --secondary-background-color: #64ffda1a;
-        --primary-color: #007bff;
-        --secondary-color: #f8f9fa;
-
-         
-        --text-color-dark: #e4e6eb;
-        --text-secondary-color-dark: #b0b3b8;
-        --background-color-dark: #18191a;
-        --secondary-background-color-dark: #212529;
-        --primary-color-dark: #ffffff;
-        --secondary-color-dark: #212529;
+      --bg:          #070c19;
+      --bg-alt:      #0b1220;
+      --bg-card:     #0f1929;
+      --bg-elevated: #152032;
+      --border:      #1b2d42;
+      --border-h:    #2a4560;
+      --teal:        #64ffda;
+      --teal-dim:    rgba(100,255,218,.08);
+      --teal-glow:   rgba(100,255,218,.18);
+      --text:        #cdd9e5;
+      --text-dim:    #8898aa;
+      --text-muted:  #4c6070;
+      --fh: 'Space Grotesk', system-ui, sans-serif;
+      --fb: 'Inter', system-ui, sans-serif;
+      --r:  12px;
     }
+
+    /* ── Reset ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--fb);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    html {
-        background-color: var(--background-color) !important;
+    /* Dot-grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(100,255,218,.055) 1px, transparent 0);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    #root { position: relative; z-index: 1; }
+
+    /* ── Container ──────────────────────────────── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── Nav ────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.25rem 0;
+      transition: background .3s, border-color .3s, padding .3s;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.scrolled {
+      background: rgba(7,12,25,.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-color: var(--border);
+      padding: .875rem 0;
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--fh); font-weight: 700; font-size: 1.1rem;
+      color: var(--teal); text-decoration: none; letter-spacing: -.02em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-links a {
+      color: var(--text-dim); text-decoration: none;
+      font-size: .875rem; font-weight: 500; letter-spacing: .01em;
+      transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-cta {
+      color: var(--teal) !important;
+      border: 1px solid rgba(100,255,218,.35);
+      padding: .375rem .9rem; border-radius: 6px;
+      transition: background .2s, border-color .2s !important;
+    }
+    .nav-cta:hover { background: var(--teal-dim); border-color: var(--teal) !important; }
+
+    /* ── Hero ───────────────────────────────────── */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; padding: 7rem 2rem 4rem; position: relative;
+    }
+    .hero-inner {
+      max-width: 1080px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 320px;
+      gap: 4rem; align-items: center;
+    }
+    .hero-greeting {
+      color: var(--teal); font-size: .85rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: .9rem; font-family: var(--fb);
+    }
+    .hero-name {
+      font-family: var(--fh);
+      font-size: clamp(3rem, 6vw, 4.75rem);
+      font-weight: 700; line-height: 1.04; letter-spacing: -.035em;
+      color: #e2eaf6; margin-bottom: .7rem;
+    }
+    .hero-role {
+      font-family: var(--fh); font-size: 1.15rem; font-weight: 400;
+      color: var(--text-dim); margin-bottom: 1.5rem;
+    }
+    .dot { color: var(--teal); margin: 0 .4em; }
+    .hero-bio {
+      font-size: .975rem; color: var(--text-dim);
+      max-width: 500px; line-height: 1.8; margin-bottom: 2.25rem;
+      text-wrap: pretty;
+    }
+    .hero-actions { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--teal); color: #07111e;
+      font-family: var(--fh); font-weight: 700; font-size: .875rem;
+      padding: .65rem 1.5rem; border-radius: 8px; text-decoration: none;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      letter-spacing: .01em; white-space: nowrap;
+    }
+    .btn-primary:hover { background: #80ffe8; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(100,255,218,.28); }
+    .btn-secondary {
+      display: flex; align-items: center; gap: .4rem;
+      color: var(--text); font-family: var(--fh); font-weight: 500; font-size: .875rem;
+      padding: .65rem 1.25rem; border-radius: 8px; text-decoration: none;
+      border: 1px solid var(--border); transition: border-color .2s, background .2s;
+      white-space: nowrap;
+    }
+    .btn-secondary:hover { border-color: var(--border-h); background: var(--bg-card); }
+
+    /* Photo */
+    .hero-photo-col { display: flex; justify-content: center; }
+    .photo-wrap { position: relative; }
+    .photo-frame {
+      width: 280px; height: 360px;
+      border-radius: 16px; overflow: hidden;
+      border: 1.5px solid rgba(100,255,218,.35);
+      box-shadow: 0 0 60px rgba(100,255,218,.12), 0 24px 64px rgba(0,0,0,.5);
+      position: relative; z-index: 1;
+    }
+    .photo-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center; display: block;
+    }
+    .photo-glow {
+      position: absolute; inset: -20px; border-radius: 30px;
+      background: radial-gradient(ellipse at 50% 40%, rgba(100,255,218,.15) 0%, transparent 70%);
+      z-index: 0; pointer-events: none;
     }
 
-    body::-webkit-scrollbar {
-        height: 0px;
-        width: 8px;
-        background-color: var(--background-color);
+    /* Scroll hint */
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      color: var(--text-muted); font-size: .68rem;
+      letter-spacing: .12em; text-transform: uppercase;
     }
-    
-    ::-webkit-scrollbar-track {
-        border-radius: 1rem;
+    .scroll-line {
+      width: 1px; height: 44px;
+      background: linear-gradient(to bottom, transparent, var(--teal));
+      animation: pulse 2s ease-in-out infinite;
     }
-    
-    ::-webkit-scrollbar-thumb {
-        border-radius: 1rem;
-        background: #b0b0b0;
-        outline: 1px solid var(--background-color);
+    @keyframes pulse { 0%,100% { opacity: .3; } 50% { opacity: 1; } }
+
+    /* Hero specialty */
+    .hero-role {
+      font-family: var(--fh); font-size: 1.1rem; font-weight: 500;
+      color: var(--teal); margin-bottom: .4rem; letter-spacing: -.01em;
+    }
+    .hero-specialty {
+      font-size: .88rem; color: var(--text-muted); margin-bottom: 1.4rem;
+      line-height: 1.6; font-weight: 400; min-height: 1.5em;
+    }
+    .typed { color: var(--teal); font-weight: 500; }
+    .caret {
+      color: var(--teal); font-weight: 400;
+      animation: caretBlink 1s step-end infinite; margin-left: 1px;
+    }
+    @keyframes caretBlink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* Stats strip */
+    .hero-stats {
+      max-width: 1080px; margin: 2.25rem auto 0;
+      padding: 0 2rem; width: 100%;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      background: var(--border); gap: 1px;
+      border: 1px solid var(--border); border-radius: var(--r); overflow: hidden;
+    }
+    .stat-item {
+      background: var(--bg-card); padding: 1.1rem 1rem;
+      display: flex; flex-direction: column;
+      align-items: center; gap: .15rem; text-align: center;
+    }
+    .stat-value {
+      font-family: var(--fh); font-size: 1.7rem; font-weight: 700;
+      color: var(--teal); line-height: 1; letter-spacing: -.025em;
+    }
+    .stat-label {
+      font-size: .67rem; color: var(--text-muted); font-weight: 600;
+      letter-spacing: .07em; text-transform: uppercase; white-space: nowrap;
     }
 
-    #search-content::-webkit-scrollbar {
-        width: .5em;
-        height: .1em;
-        background-color: var(--background-color);
+    /* Featured experience card (Tesla) */
+    .exp-card.featured {
+      border-top: 2px solid rgba(100,255,218,.55);
+      background: var(--bg-elevated);
     }
-</style>
 
+    /* Section divider */
+    .section-div {
+      display: flex; justify-content: center;
+      padding: 0; margin: -2rem 0; position: relative; z-index: 2;
+    }
+    .section-div-line {
+      width: 1px; height: 64px;
+      background: linear-gradient(to bottom,
+        rgba(100,255,218,0),
+        rgba(100,255,218,0.45) 50%,
+        rgba(100,255,218,0)
+      );
+    }
 
-<meta name="description" content=Text&#32;about&#32;my&#32;cool&#32;site>
-<link rel="stylesheet" href="/css/index.css" media="all">
-<link rel="stylesheet" href="/css/projects.css" media="all">
+    /* ── Sections ───────────────────────────────── */
+    .section {
+      padding: 6rem 2rem;
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .section.visible { opacity: 1; transform: translateY(0); }
+    .section.alt { background: var(--bg-alt); }
+    .section-head { margin-bottom: 3rem; }
+    .section-label {
+      display: block; color: var(--teal);
+      font-size: .75rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      margin-bottom: .4rem; font-family: var(--fb);
+    }
+    .section-title {
+      font-family: var(--fh);
+      font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+      font-weight: 700; letter-spacing: -.025em; color: #e2eaf6;
+    }
 
+    /* About */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 260px; gap: 3.5rem; align-items: start;
+    }
+    .about-text { display: flex; flex-direction: column; gap: 1.1rem; }
+    .about-text p {
+      font-size: .93rem; color: var(--text-dim); line-height: 1.8; text-wrap: pretty;
+    }
+    .about-path {
+      display: flex; flex-direction: column; align-items: stretch;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 1.25rem;
+    }
+    .path-step {
+      display: flex; flex-direction: column; gap: .1rem;
+      padding: .6rem .75rem; border-radius: 8px;
+    }
+    .path-step.now { background: var(--teal-dim); border: 1px solid rgba(100,255,218,.22); }
+    .path-co { font-family: var(--fh); font-weight: 600; font-size: .9rem; color: var(--text); }
+    .path-step.now .path-co { color: var(--teal); }
+    .path-role { font-size: .72rem; color: var(--text-muted); }
+    .path-arrow { color: var(--teal); opacity: .45; text-align: center; font-size: .85rem; padding: .15rem 0; }
 
-<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+    /* Featured projects */
+    .featured-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: .875rem;
+      margin-bottom: 2.25rem;
+    }
+    .featured-card {
+      background: var(--bg-elevated);
+      border: 1px solid rgba(100,255,218,.22);
+      border-radius: var(--r); padding: 1.5rem;
+      text-decoration: none; display: flex; flex-direction: column; gap: .7rem;
+      transition: all .25s;
+    }
+    .featured-card:hover {
+      border-color: rgba(100,255,218,.5);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 44px rgba(0,0,0,.4);
+    }
+    .featured-flag {
+      font-size: .64rem; font-weight: 700; color: var(--teal);
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .featured-title {
+      font-family: var(--fh); font-size: 1rem; font-weight: 600;
+      color: #e2eaf6; line-height: 1.4;
+    }
+    .featured-desc { font-size: .8rem; color: var(--text-dim); line-height: 1.65; flex: 1; }
 
-  <title>
-Indrajeet Thakare
+    /* Company monogram */
+    .co-logo {
+      width: 30px; height: 30px; border-radius: 7px; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--teal-dim); border: 1px solid rgba(100,255,218,.25);
+      color: var(--teal); font-family: var(--fh); font-weight: 700; font-size: .85rem;
+      align-self: center;
+    }
 
-  </title>
+    /* ── Experience ─────────────────────────────── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .exp-card {
+      display: grid; grid-template-columns: 180px 1fr; gap: 2rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 1.875rem;
+      transition: border-color .25s, background .25s, transform .25s;
+    }
+    .exp-card:hover {
+      border-color: rgba(100,255,218,.3);
+      background: var(--bg-elevated);
+      transform: translateX(4px);
+    }
+    .exp-meta { display: flex; flex-direction: column; gap: .5rem; padding-top: .15rem; }
+    .exp-period { color: var(--text-dim); font-size: .82rem; font-weight: 500; line-height: 1.4; }
+    .exp-badge {
+      display: inline-block; width: fit-content;
+      color: var(--teal); font-size: .7rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      border: 1px solid rgba(100,255,218,.25); padding: .2em .55em;
+      border-radius: 4px; background: var(--teal-dim);
+    }
+    .exp-title-row { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: .875rem; }
+    .exp-role { font-family: var(--fh); font-size: 1.15rem; font-weight: 600; color: #e2eaf6; }
+    .exp-company {
+      color: var(--teal); font-size: .85rem; font-weight: 500;
+      text-decoration: none; transition: opacity .2s; opacity: .8;
+    }
+    .exp-company:hover { opacity: 1; }
+    .exp-summary { font-size: .89rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 1.25rem; text-wrap: pretty; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1.25rem; }
+    .exp-bullets li {
+      font-size: .88rem; color: var(--text-dim);
+      padding-left: 1.2em; position: relative; line-height: 1.65;
+    }
+    .exp-bullets li::before {
+      content: '▸'; color: var(--teal); position: absolute;
+      left: 0; font-size: .7em; top: .28em;
+    }
+
+    /* Role progression — LinkedIn vertical style */
+    .exp-progression {
+      display: flex; flex-direction: column; gap: 0;
+      margin-bottom: 1.1rem;
+      border-left: 2px solid rgba(100,255,218,0.28);
+    }
+    .prog-step {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .35rem 0 .35rem .875rem;
+      position: relative;
+    }
+    .prog-step::before {
+      content: ''; position: absolute; left: -.3rem; top: 50%;
+      transform: translateY(-50%);
+      width: 6px; height: 6px;
+      background: var(--teal); border-radius: 50%; opacity: .7;
+    }
+    .prog-title {
+      font-family: var(--fh); font-size: .83rem;
+      font-weight: 600; color: var(--text);
+    }
+    .prog-period { font-size: .72rem; color: var(--text-dim); }
+
+    /* ── Tags ───────────────────────────────────── */
+    .tag-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag {
+      background: var(--teal-dim); color: var(--teal);
+      font-size: .73rem; font-weight: 500;
+      padding: .22em .6em; border-radius: 4px;
+      font-family: var(--fb); letter-spacing: .02em;
+      border: 1px solid rgba(100,255,218,.14);
+    }
+    .tag.sm { font-size: .67rem; }
+
+    /* ── Projects ───────────────────────────────── */
+    .filter-tabs { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .filter-tab {
+      display: flex; align-items: center; gap: .4rem;
+      background: none; border: 1px solid var(--border);
+      color: var(--text-dim); font-family: var(--fb); font-size: .82rem; font-weight: 500;
+      padding: .35rem .9rem; border-radius: 6px; cursor: pointer; transition: all .2s;
+    }
+    .filter-tab:hover { border-color: var(--border-h); color: var(--text); }
+    .filter-tab.active { background: var(--teal-dim); border-color: rgba(100,255,218,.45); color: var(--teal); }
+    .tab-count {
+      background: rgba(100,255,218,.15); color: var(--teal);
+      font-size: .68rem; font-weight: 700; padding: .1em .45em;
+      border-radius: 3px; min-width: 18px; text-align: center;
+    }
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: .875rem;
+    }
+    .project-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 1.375rem;
+      text-decoration: none; display: flex; flex-direction: column; gap: .75rem;
+      transition: all .25s; cursor: pointer;
+    }
+    .project-card:hover {
+      border-color: rgba(100,255,218,.32);
+      background: var(--bg-elevated);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(0,0,0,.32);
+    }
+    .project-header { display: flex; justify-content: space-between; align-items: center; }
+    .project-cat {
+      font-size: .68rem; font-weight: 700; color: var(--teal);
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .arrow-icon { width: 17px; height: 17px; color: var(--text-muted); transition: all .2s; flex-shrink: 0; }
+    .project-card:hover .arrow-icon { color: var(--teal); transform: translate(2px,-2px); }
+    .project-title {
+      font-family: var(--fh); font-size: .9rem; font-weight: 600;
+      color: var(--text); line-height: 1.45; flex: 1;
+    }
+
+    /* ── Certifications ─────────────────────────── */
+    .certs-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    .cert-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 1.5rem;
+      display: flex; flex-direction: column; gap: .875rem;
+      transition: all .25s;
+    }
+    .cert-card.clickable { cursor: pointer; }
+    .cert-card:hover {
+      border-color: rgba(100,255,218,.28);
+      background: var(--bg-elevated);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(0,0,0,.3);
+    }
+    .cert-logo-wrap { width: 44px; height: 44px; display: flex; align-items: center; }
+    .cert-logo { width: 44px; height: 44px; object-fit: contain; }
+    .cert-info { display: flex; flex-direction: column; gap: .25rem; }
+    .cert-name { font-family: var(--fh); font-size: .85rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .cert-issuer { font-size: .75rem; color: var(--text-dim); }
+    .cert-date { font-size: .72rem; color: var(--teal); font-weight: 500; }
+    .cert-link { font-size: .7rem; color: var(--text-muted); margin-top: .1rem; }
+
+    /* ── Skills ─────────────────────────────────── */
+    .skills-groups { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.25rem; }
+    .skill-group-name {
+      font-family: var(--fh); font-size: .75rem; font-weight: 700;
+      color: var(--teal); letter-spacing: .09em; text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .skill-tag {
+      background: var(--bg-card); border: 1px solid var(--border);
+      color: var(--text-dim); font-size: .82rem; font-weight: 500;
+      padding: .3em .75em; border-radius: 6px; transition: all .2s;
+    }
+    .skill-tag:hover { border-color: rgba(100,255,218,.3); color: var(--teal); }
+
+    /* ── Contact ────────────────────────────────── */
+    .contact-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+    .contact-text { color: var(--text-dim); font-size: .975rem; margin-bottom: 2rem; line-height: 1.75; }
+    .contact-email {
+      display: inline-block; font-family: var(--fh); font-size: 1.05rem; font-weight: 600;
+      color: var(--teal); text-decoration: none;
+      border-bottom: 1px solid rgba(100,255,218,.3); padding-bottom: 2px;
+      margin-bottom: 2.5rem; transition: border-color .2s;
+    }
+    .contact-email:hover { border-color: var(--teal); }
+    .social-row { display: flex; gap: 1.5rem; justify-content: center; }
+    .social-link {
+      display: flex; align-items: center; gap: .45rem;
+      color: var(--text-dim); text-decoration: none;
+      font-size: .875rem; font-weight: 500; transition: color .2s;
+    }
+    .social-link:hover { color: var(--teal); }
+
+    /* ── Footer ─────────────────────────────────── */
+    .footer {
+      display: flex; align-items: center; justify-content: center; gap: .6rem;
+      padding: 1.75rem 2rem; border-top: 1px solid var(--border);
+      color: var(--text-muted); font-size: .78rem;
+    }
+    .footer-sep { color: var(--border-h); }
+
+    /* ── Responsive ─────────────────────────────── */
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-photo-col { order: -1; }
+      .photo-frame { width: 200px; height: 250px; }
+      .exp-card { grid-template-columns: 1fr; gap: 1rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: repeat(2,1fr); }
+      .certs-grid { grid-template-columns: repeat(2,1fr); }
+      .skills-groups { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 560px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
+      .skills-groups { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
 </head>
-
-<body class="light">
-  
-  
-<script>
-    let localStorageValue = localStorage.getItem("pref-theme");
-    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    switch (localStorageValue) {
-        case "dark":
-            document.body.classList.add('dark');
-            break;
-        case "light":
-            document.body.classList.remove('dark');
-            break;
-        default:
-            if (mediaQuery) {
-                document.body.classList.add('dark');
-            }
-            break;
-    }
-</script>
-
-
-
-
-<script>
-    var prevScrollPos = window.pageYOffset;
-    window.addEventListener("scroll", function showHeaderOnScroll() {
-        let profileHeaderElem = document.getElementById("profileHeader");
-        let currentScrollPos = window.pageYOffset;
-        let resetHeaderStyle = false;
-        let showNavBarOnScrollUp =  true ;
-        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
-        if (showNavBar) {
-            profileHeaderElem.classList.add("showHeaderOnTop");
-        } else {
-            resetHeaderStyle = true;
-        }
-        if(currentScrollPos === 0) {
-            resetHeaderStyle = true;
-        }
-        if(resetHeaderStyle) {
-            profileHeaderElem.classList.remove("showHeaderOnTop");
-        }
-        prevScrollPos = currentScrollPos;        
-    });
-</script>
-
-
-
-<header id="profileHeader">
-    <nav class="pt-3 navbar navbar-expand-lg animate">
-        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
-            
-            <a class="navbar-brand primary-font text-wrap" href="/">
-                
-                <img src="images/portimg.svg" width="30" height="30"
-                    class="d-inline-block align-top">
-                Profile
-                
-            </a>
-
-            
-
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
-                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
-                </svg>
-            </button>
-
-            
-            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
-                <ul class="navbar-nav ms-auto text-center">
-                    
-
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#experience"
-                            aria-label="experience">
-                            Experience
-                        </a>
-                    </li>
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#education"
-                            aria-label="education">
-                            Projects and Learnings
-                        </a>
-                    </li>
-                    
-
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#achievements"
-                            aria-label="achievements">
-                            Achievements
-                        </a>
-                    </li>
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#contact"
-                            aria-label="contact">
-                            Contact
-                        </a>
-                    </li>
-                    
-
-                    
-                    
-                    
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/blogs" title="Blog posts">
-                            
-                            Blog
-                        </a>
-                    </li>
-                    
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        
-                        <div class="text-center">
-                            <button id="theme-toggle">
-                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                                </svg>
-                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="5"></circle>
-                                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                                </svg>
-                            </button>
-                        </div>
-                    </li>
-                    
-
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-</header>
-<div id="content">
-<section id="hero" class="py-5 align-middle">
-    <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-8 content animate" id="primary-font">
-                <span class="subtitle">
-                    Hi, my name is
-                </span>
-                <h2>
-                    Indrajeet Thakare
-                </h2>
-                <h3>
-                    Seasoned Data Professional
-                </h3>
-                <p class="hero-content">
-                    With a strong background in analytics and hands-on industry experience, I am deeply committed to the field. I am eager to advance my career in this dynamic domain, where I thrive on using advanced analytics to provide valuable insights that improve business operations and drive product development.
-                </p>
-                <div class="row">
-                    <div class="col-auto h-100">
-                        
-                        <a href="https://www.dropbox.com/scl/fi/p27gqdbit1i6uedyladkb/Indrajeet_Thakare_Resume_DropBox.pdf?rlkey=t1xjw0oqmp3e3wfi7ictfnfl7&amp;st=uo4j0tof&amp;dl=0" class="btn" download
-			  >
-                            Resume
-                        </a>
-                        
-                    </div>
-                    <div class="col-auto px-0 h-100"><span>
-    
-
-    
-</span></div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <div class="row justify-content-center">
-                    <div class="col-sm-12 col-md-9 pt-5 image animate px-5 px-md-5 px-lg-0 text-center">
-                        <img src="/images/IMG.png"
-                            class="img-thumbnail mx-auto"
-                            alt=""
-                        >
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="hero-bottom-svg d-md-block d-lg-block d-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="201" height="201" viewBox="0 0 201 201">
-            <g id="Group_1168" data-name="Group 1168" transform="translate(-384 -1392)">
-                <rect id="Rectangle_2206" data-name="Rectangle 2206" width="12" height="2" rx="1"
-                    transform="translate(391 1392) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2271" data-name="Rectangle 2271" width="12" height="2" rx="1"
-                    transform="translate(391 1500) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2238" data-name="Rectangle 2238" width="12" height="2" rx="1"
-                    transform="translate(391 1446) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2278" data-name="Rectangle 2278" width="12" height="2" rx="1"
-                    transform="translate(391 1554) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2222" data-name="Rectangle 2222" width="12" height="2" rx="1"
-                    transform="translate(391 1419) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2272" data-name="Rectangle 2272" width="12" height="2" rx="1"
-                    transform="translate(391 1527) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2241" data-name="Rectangle 2241" width="12" height="2" rx="1"
-                    transform="translate(391 1473) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2288" data-name="Rectangle 2288" width="12" height="2" rx="1"
-                    transform="translate(391 1581) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2214" data-name="Rectangle 2214" width="12" height="2" rx="1"
-                    transform="translate(499 1392) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2289" data-name="Rectangle 2289" width="12" height="2" rx="1"
-                    transform="translate(499 1500) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2256" data-name="Rectangle 2256" width="12" height="2" rx="1"
-                    transform="translate(499 1446) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2290" data-name="Rectangle 2290" width="12" height="2" rx="1"
-                    transform="translate(499 1554) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2231" data-name="Rectangle 2231" width="12" height="2" rx="1"
-                    transform="translate(499 1419) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2291" data-name="Rectangle 2291" width="12" height="2" rx="1"
-                    transform="translate(499 1527) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2257" data-name="Rectangle 2257" width="12" height="2" rx="1"
-                    transform="translate(499 1473) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2292" data-name="Rectangle 2292" width="12" height="2" rx="1"
-                    transform="translate(499 1581) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2210" data-name="Rectangle 2210" width="12" height="2" rx="1"
-                    transform="translate(445 1392) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2279" data-name="Rectangle 2279" width="12" height="2" rx="1"
-                    transform="translate(445 1500) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2248" data-name="Rectangle 2248" width="12" height="2" rx="1"
-                    transform="translate(445 1446) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2280" data-name="Rectangle 2280" width="12" height="2" rx="1"
-                    transform="translate(445 1554) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2226" data-name="Rectangle 2226" width="12" height="2" rx="1"
-                    transform="translate(445 1419) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2281" data-name="Rectangle 2281" width="12" height="2" rx="1"
-                    transform="translate(445 1527) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2249" data-name="Rectangle 2249" width="12" height="2" rx="1"
-                    transform="translate(445 1473) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2293" data-name="Rectangle 2293" width="12" height="2" rx="1"
-                    transform="translate(445 1581) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2219" data-name="Rectangle 2219" width="12" height="2" rx="1"
-                    transform="translate(553 1392) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2310" data-name="Rectangle 2310" width="12" height="2" rx="1"
-                    transform="translate(553 1500) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2262" data-name="Rectangle 2262" width="12" height="2" rx="1"
-                    transform="translate(553 1446) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2311" data-name="Rectangle 2311" width="12" height="2" rx="1"
-                    transform="translate(553 1554) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2232" data-name="Rectangle 2232" width="12" height="2" rx="1"
-                    transform="translate(553 1419) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2312" data-name="Rectangle 2312" width="12" height="2" rx="1"
-                    transform="translate(553 1527) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2263" data-name="Rectangle 2263" width="12" height="2" rx="1"
-                    transform="translate(553 1473) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2313" data-name="Rectangle 2313" width="12" height="2" rx="1"
-                    transform="translate(553 1581) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2209" data-name="Rectangle 2209" width="12" height="2" rx="1"
-                    transform="translate(418 1392) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2273" data-name="Rectangle 2273" width="12" height="2" rx="1"
-                    transform="translate(418 1500) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2242" data-name="Rectangle 2242" width="12" height="2" rx="1"
-                    transform="translate(418 1446) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2282" data-name="Rectangle 2282" width="12" height="2" rx="1"
-                    transform="translate(418 1554) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2223" data-name="Rectangle 2223" width="12" height="2" rx="1"
-                    transform="translate(418 1419) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2274" data-name="Rectangle 2274" width="12" height="2" rx="1"
-                    transform="translate(418 1527) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2243" data-name="Rectangle 2243" width="12" height="2" rx="1"
-                    transform="translate(418 1473) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2294" data-name="Rectangle 2294" width="12" height="2" rx="1"
-                    transform="translate(418 1581) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2217" data-name="Rectangle 2217" width="12" height="2" rx="1"
-                    transform="translate(526 1392) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2314" data-name="Rectangle 2314" width="12" height="2" rx="1"
-                    transform="translate(526 1500) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2258" data-name="Rectangle 2258" width="12" height="2" rx="1"
-                    transform="translate(526 1446) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2315" data-name="Rectangle 2315" width="12" height="2" rx="1"
-                    transform="translate(526 1554) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2233" data-name="Rectangle 2233" width="12" height="2" rx="1"
-                    transform="translate(526 1419) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2316" data-name="Rectangle 2316" width="12" height="2" rx="1"
-                    transform="translate(526 1527) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2259" data-name="Rectangle 2259" width="12" height="2" rx="1"
-                    transform="translate(526 1473) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2317" data-name="Rectangle 2317" width="12" height="2" rx="1"
-                    transform="translate(526 1581) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2211" data-name="Rectangle 2211" width="12" height="2" rx="1"
-                    transform="translate(472 1392) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2295" data-name="Rectangle 2295" width="12" height="2" rx="1"
-                    transform="translate(472 1500) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2250" data-name="Rectangle 2250" width="12" height="2" rx="1"
-                    transform="translate(472 1446) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2296" data-name="Rectangle 2296" width="12" height="2" rx="1"
-                    transform="translate(472 1554) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2227" data-name="Rectangle 2227" width="12" height="2" rx="1"
-                    transform="translate(472 1419) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2297" data-name="Rectangle 2297" width="12" height="2" rx="1"
-                    transform="translate(472 1527) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2251" data-name="Rectangle 2251" width="12" height="2" rx="1"
-                    transform="translate(472 1473) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2298" data-name="Rectangle 2298" width="12" height="2" rx="1"
-                    transform="translate(472 1581) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2221" data-name="Rectangle 2221" width="12" height="2" rx="1"
-                    transform="translate(580 1392) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2318" data-name="Rectangle 2318" width="12" height="2" rx="1"
-                    transform="translate(580 1500) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2264" data-name="Rectangle 2264" width="12" height="2" rx="1"
-                    transform="translate(580 1446) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2319" data-name="Rectangle 2319" width="12" height="2" rx="1"
-                    transform="translate(580 1554) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2236" data-name="Rectangle 2236" width="12" height="2" rx="1"
-                    transform="translate(580 1419) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2320" data-name="Rectangle 2320" width="12" height="2" rx="1"
-                    transform="translate(580 1527) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2265" data-name="Rectangle 2265" width="12" height="2" rx="1"
-                    transform="translate(580 1473) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2321" data-name="Rectangle 2321" width="12" height="2" rx="1"
-                    transform="translate(580 1581) rotate(90)" fill="#282f49" />
-                <rect id="Rectangle_2207" data-name="Rectangle 2207" width="12" height="2" rx="1"
-                    transform="translate(396 1399) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2270" data-name="Rectangle 2270" width="12" height="2" rx="1"
-                    transform="translate(396 1507) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2239" data-name="Rectangle 2239" width="12" height="2" rx="1"
-                    transform="translate(396 1453) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2283" data-name="Rectangle 2283" width="12" height="2" rx="1"
-                    transform="translate(396 1561) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2224" data-name="Rectangle 2224" width="12" height="2" rx="1"
-                    transform="translate(396 1426) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2275" data-name="Rectangle 2275" width="12" height="2" rx="1"
-                    transform="translate(396 1534) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2244" data-name="Rectangle 2244" width="12" height="2" rx="1"
-                    transform="translate(396 1480) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2299" data-name="Rectangle 2299" width="12" height="2" rx="1"
-                    transform="translate(396 1588) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2215" data-name="Rectangle 2215" width="12" height="2" rx="1"
-                    transform="translate(504 1399) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2300" data-name="Rectangle 2300" width="12" height="2" rx="1"
-                    transform="translate(504 1507) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2252" data-name="Rectangle 2252" width="12" height="2" rx="1"
-                    transform="translate(504 1453) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2301" data-name="Rectangle 2301" width="12" height="2" rx="1"
-                    transform="translate(504 1561) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2228" data-name="Rectangle 2228" width="12" height="2" rx="1"
-                    transform="translate(504 1426) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2302" data-name="Rectangle 2302" width="12" height="2" rx="1"
-                    transform="translate(504 1534) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2253" data-name="Rectangle 2253" width="12" height="2" rx="1"
-                    transform="translate(504 1480) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2303" data-name="Rectangle 2303" width="12" height="2" rx="1"
-                    transform="translate(504 1588) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2212" data-name="Rectangle 2212" width="12" height="2" rx="1"
-                    transform="translate(450 1399) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2284" data-name="Rectangle 2284" width="12" height="2" rx="1"
-                    transform="translate(450 1507) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2245" data-name="Rectangle 2245" width="12" height="2" rx="1"
-                    transform="translate(450 1453) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2285" data-name="Rectangle 2285" width="12" height="2" rx="1"
-                    transform="translate(450 1561) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2229" data-name="Rectangle 2229" width="12" height="2" rx="1"
-                    transform="translate(450 1426) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2286" data-name="Rectangle 2286" width="12" height="2" rx="1"
-                    transform="translate(450 1534) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2246" data-name="Rectangle 2246" width="12" height="2" rx="1"
-                    transform="translate(450 1480) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2304" data-name="Rectangle 2304" width="12" height="2" rx="1"
-                    transform="translate(450 1588) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2218" data-name="Rectangle 2218" width="12" height="2" rx="1"
-                    transform="translate(558 1399) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2322" data-name="Rectangle 2322" width="12" height="2" rx="1"
-                    transform="translate(558 1507) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2266" data-name="Rectangle 2266" width="12" height="2" rx="1"
-                    transform="translate(558 1453) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2323" data-name="Rectangle 2323" width="12" height="2" rx="1"
-                    transform="translate(558 1561) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2234" data-name="Rectangle 2234" width="12" height="2" rx="1"
-                    transform="translate(558 1426) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2324" data-name="Rectangle 2324" width="12" height="2" rx="1"
-                    transform="translate(558 1534) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2267" data-name="Rectangle 2267" width="12" height="2" rx="1"
-                    transform="translate(558 1480) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2325" data-name="Rectangle 2325" width="12" height="2" rx="1"
-                    transform="translate(558 1588) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2208" data-name="Rectangle 2208" width="12" height="2" rx="1"
-                    transform="translate(423 1399) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2276" data-name="Rectangle 2276" width="12" height="2" rx="1"
-                    transform="translate(423 1507) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2240" data-name="Rectangle 2240" width="12" height="2" rx="1"
-                    transform="translate(423 1453) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2287" data-name="Rectangle 2287" width="12" height="2" rx="1"
-                    transform="translate(423 1561) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2225" data-name="Rectangle 2225" width="12" height="2" rx="1"
-                    transform="translate(423 1426) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2277" data-name="Rectangle 2277" width="12" height="2" rx="1"
-                    transform="translate(423 1534) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2247" data-name="Rectangle 2247" width="12" height="2" rx="1"
-                    transform="translate(423 1480) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2305" data-name="Rectangle 2305" width="12" height="2" rx="1"
-                    transform="translate(423 1588) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2216" data-name="Rectangle 2216" width="12" height="2" rx="1"
-                    transform="translate(531 1399) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2326" data-name="Rectangle 2326" width="12" height="2" rx="1"
-                    transform="translate(531 1507) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2260" data-name="Rectangle 2260" width="12" height="2" rx="1"
-                    transform="translate(531 1453) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2327" data-name="Rectangle 2327" width="12" height="2" rx="1"
-                    transform="translate(531 1561) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2235" data-name="Rectangle 2235" width="12" height="2" rx="1"
-                    transform="translate(531 1426) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2328" data-name="Rectangle 2328" width="12" height="2" rx="1"
-                    transform="translate(531 1534) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2261" data-name="Rectangle 2261" width="12" height="2" rx="1"
-                    transform="translate(531 1480) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2329" data-name="Rectangle 2329" width="12" height="2" rx="1"
-                    transform="translate(531 1588) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2213" data-name="Rectangle 2213" width="12" height="2" rx="1"
-                    transform="translate(477 1399) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2306" data-name="Rectangle 2306" width="12" height="2" rx="1"
-                    transform="translate(477 1507) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2254" data-name="Rectangle 2254" width="12" height="2" rx="1"
-                    transform="translate(477 1453) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2307" data-name="Rectangle 2307" width="12" height="2" rx="1"
-                    transform="translate(477 1561) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2230" data-name="Rectangle 2230" width="12" height="2" rx="1"
-                    transform="translate(477 1426) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2308" data-name="Rectangle 2308" width="12" height="2" rx="1"
-                    transform="translate(477 1534) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2255" data-name="Rectangle 2255" width="12" height="2" rx="1"
-                    transform="translate(477 1480) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2309" data-name="Rectangle 2309" width="12" height="2" rx="1"
-                    transform="translate(477 1588) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2220" data-name="Rectangle 2220" width="12" height="2" rx="1"
-                    transform="translate(585 1399) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2330" data-name="Rectangle 2330" width="12" height="2" rx="1"
-                    transform="translate(585 1507) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2268" data-name="Rectangle 2268" width="12" height="2" rx="1"
-                    transform="translate(585 1453) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2331" data-name="Rectangle 2331" width="12" height="2" rx="1"
-                    transform="translate(585 1561) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2237" data-name="Rectangle 2237" width="12" height="2" rx="1"
-                    transform="translate(585 1426) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2332" data-name="Rectangle 2332" width="12" height="2" rx="1"
-                    transform="translate(585 1534) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2269" data-name="Rectangle 2269" width="12" height="2" rx="1"
-                    transform="translate(585 1480) rotate(-180)" fill="#282f49" />
-                <rect id="Rectangle_2333" data-name="Rectangle 2333" width="12" height="2" rx="1"
-                    transform="translate(585 1588) rotate(-180)" fill="#282f49" />
-            </g>
-        </svg>
-    </div>
-    
-</section>
-
-<section id="experience" class="py-5">
-    <div class="container">
-        <h3 class="text-center">Experience</h3>
-        <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-8 col-lg-8 py-5">
-                <div class="experience-container px-3 pt-2">
-                    <ul class="nav nav-pills mb-3 bg-transparent primary-font" id="pills-tab" role="tablist">
-                        
-                        
-                        <li class="nav-item px-1 bg-transparent" role="presentation">
-                            <div 
-                                class="nav-link active bg-transparent" 
-                                aria-selected="true" 
-                                role="tab" 
-                                data-bs-toggle="pill"
-                                id='Data-Analyst-Aug-2023---Dec-2023-tab'
-                                data-bs-target='#pills-Data-Analyst-Aug-2023---Dec-2023'
-                                aria-controls='Data-Analyst-Aug-2023---Dec-2023' 
-                            >
-                                Data Analyst
-                            </div>
-                        </li>
-                        
-                        
-                        
-                        <li class="nav-item px-1 bg-transparent" role="presentation">
-                            <div 
-                                class="nav-link bg-transparent" 
-                                aria-selected="true" 
-                                role="tab" 
-                                data-bs-toggle="pill"
-                                id='Data-Engineer-May-2023---Aug-2023-tab'
-                                data-bs-target='#pills-Data-Engineer-May-2023---Aug-2023' 
-                                aria-controls='Data-Engineer-May-2023---Aug-2023'
-                            >
-                                Data Engineer
-                            </div>
-                        </li>
-                        
-                        
-                        
-                        <li class="nav-item px-1 bg-transparent" role="presentation">
-                            <div 
-                                class="nav-link bg-transparent" 
-                                aria-selected="true" 
-                                role="tab" 
-                                data-bs-toggle="pill"
-                                id='Data-Analytics-Engineer-Jan-2023---May-2024-tab'
-                                data-bs-target='#pills-Data-Analytics-Engineer-Jan-2023---May-2024' 
-                                aria-controls='Data-Analytics-Engineer-Jan-2023---May-2024'
-                            >
-                                Data Analytics Engineer
-                            </div>
-                        </li>
-                        
-                        
-                    </ul>
-                    <div class="tab-content pb-5 pt-2 bg-transparent primary-font" id="pills-tabContent">
-                        
-                        
-                        <div 
-                            class="tab-pane fade show active bg-transparent" 
-                            role="tabpanel"
-                            id='pills-Data-Analyst-Aug-2023---Dec-2023'
-                            aria-labelledby='pills-Data-Analyst-Aug-2023---Dec-2023-tab'
-                        >
-                            <div>
-                                <span class="h4">Tesla</span>
-                                <small>-</small>
-                                <a href="https://www.tesla.com/about" target="_blank">Data Analyst</a>
-                                <div class="pb-1">
-                                    <small>Aug 2023 - Dec 2023</small>
-                                    
-                                    <span class="p-2">
-                                        <span 
-                                            style="cursor: pointer;" 
-                                            data-bs-toggle="tooltip" 
-                                            data-bs-placement="top" 
-                                            data-bs-original-title=I&#32;worked&#32;as&#32;a&#32;Data&#32;Analyst&#32;in&#32;Fall&#32;Semester&#32;(Co-op).
-                                        >
-                                            <i class="fas fa-info-circle fa-xs"></i>
-                                        </span>
-                                    </span>
-                                    
-                                </div>
-
-                                
-                            </div>
-
-                            At Tesla, I played a key role in reducing the risk associated with excess inventory at part distribution centers across the US. I provided critical data insights to the material planning team, which helped in avoiding the unnecessary buildup of service part inventory. My efforts facilitated a smooth transition during warehouse changes by generating accurate inventory transfer recommendations. Additionally, I identified a significant oversight in global service parts inventory, leading to a cost-saving redistribution effort. I also developed real-time visualizations and logic to optimize inventory movement, significantly improving inventory management and enhancing customer satisfaction. Tools - Python, SQL, Airflow, Tableau / Power BI
-                        </div>
-                        
-                        
-                        
-                        <div 
-                            class="tab-pane fade bg-transparent" 
-                            role="tabpanel"
-                            id='pills-Data-Engineer-May-2023---Aug-2023'
-                            aria-labelledby='pills-Data-Engineer-May-2023---Aug-2023-tab'
-                        >
-                            <div>
-                                <span class="h4">FemiSpace</span>
-                                <small>-</small>
-                                <a href="https://www.femispace.com/" target="_blank">Data Engineer</a>
-                                
-                                <div class="pb-1">
-                                    <small>May 2023 - Aug 2023</small>
-                                    
-                                    <span class="p-2">
-                                        <span 
-                                            style="cursor: pointer;" 
-                                            data-bs-toggle="tooltip" 
-                                            data-bs-placement="top" 
-                                            data-bs-original-title=I&#32;worked&#32;as&#32;a&#32;Data&#32;Analytics&#32;Engineer&#32;in&#32;Summer&#32;Semester.
-                                        > 
-                                            <i class="fas fa-info-circle fa-xs"></i>
-                                        </span>
-                                    </span>
-                                    
-                                </div>
-                                
-                                
-                            </div>
-
-                            <div class="pt-2">
-                                At Femispace, I contributed to the enhancement of a Nutritional Food Database by performing detailed data cleaning and augmentation, which greatly improved the platform&rsquo;s quality. I also created high-level wireframe dashboards that significantly reduced reporting time. Through extensive exploratory data analysis, I uncovered important insights, and I was instrumental in streamlining data access by developing efficient SQL queries and stored procedures. I also played a key role in identifying data sources and developing key performance metrics, as well as leading a proof of concept to explore the integration of modern ETL workflows. Tools: Python, SQL, Tableau, Snowflake, dbt
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div 
-                            class="tab-pane fade bg-transparent" 
-                            role="tabpanel"
-                            id='pills-Data-Analytics-Engineer-Jan-2023---May-2024'
-                            aria-labelledby='pills-Data-Analytics-Engineer-Jan-2023---May-2024-tab'
-                        >
-                            <div>
-                                <span class="h4">Blinkit</span>
-                                <small>-</small>
-                                <a href="https://blinkit.com/aboutus" target="_blank">Data Analytics Engineer</a>
-                                
-                                <div class="pb-1">
-                                    <small>Jan 2023 - May 2024</small>
-                                    
-                                    <span class="p-2">
-                                        <span 
-                                            style="cursor: pointer;" 
-                                            data-bs-toggle="tooltip" 
-                                            data-bs-placement="top" 
-                                            data-bs-original-title=I&#32;worked&#32;as&#32;a&#32;Full&#32;Time&#32;Supply&#32;Chain&#32;Data&#32;Analyst&#32;for&#32;2&#43;&#32;years.
-                                        > 
-                                            <i class="fas fa-info-circle fa-xs"></i>
-                                        </span>
-                                    </span>
-                                    
-                                </div>
-                                
-                                
-                            </div>
-
-                            <div class="pt-2">
-                                During my tenure at Blinkit, I proposed and implemented an excess inventory rebalance logic that improved product availability across the west India region. I also automated the order generation process, drastically reducing execution time. My comprehensive technical analyses, including inventory classification and market basket analysis, supported more informed decision-making and improved operational efficiency. Additionally, I was responsible for developing real-time dashboards that tracked critical supply chain metrics and supported demand planning and forecasting strategies. Tools: Python, SQL, Airflow, Tableau / Power BI
-                            </div>
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section id="education" class="py-5">
-    <div class="container">
-        <h3 class="text-center">Projects and Learnings</h3>
-        <div class="row justify-content-center py-5">
-            
-            
-            <div class="col-12 p-0">
-                <div class="row row align-items-center justify-content-center m-1 mb-4">
-                    
-
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <small></small>
-                                </div>
-                                <h5 class="card-title">Data Analysis</h5>
-                                
-                                
-                                
-                                
-
-                                
-                                <div class="py-1 education-content">
-                                    <ul>
-<li>
-<p><a href="https://github.com/IndraT97/Zomato_Geospatial_Analysis">Zomato Geospatial Analysis</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Weather-forecasting-desktop-application">Weather Forecasting Desktop application</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Sales-Exploratory-Data-Analysis">Budget Sales Exploratory Data Analysis</a></p>
-</li>
-</ul>
-
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 p-0">
-                <div class="row row align-items-center justify-content-center m-1 mb-4">
-                    
-
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <small></small>
-                                </div>
-                                <h5 class="card-title">Data Engineering</h5>
-                                
-                                
-                                
-                                
-
-                                
-                                <div class="py-1 education-content">
-                                    <h5 id="azure-data-engineering">Azure Data Engineering</h5>
-<ul>
-<li>
-<p><a href="https://github.com/IndraT97/Azure-Data-Engineering-ADF-DBX-ADLS">Azure MetaData Drive Automated Data Pipeline (Full Load)</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Azure-Data-Engineering-ADF-DBX-RBAC-UC-CI_CD">Azure MetaData Drive Automated Data Pipeline (Incremental Load)</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/DBX_Delta_live_Table">Databricks Automated Data Pipeline using Delta Live Table and Autoloader concept</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Azure-DBX-UnityCatelog_Hive_MetaStore_Sync">Databricks Unity Catelog - Hive Meta Store Sync Procedure</a></p>
-</li>
-</ul>
-<h5 id="aws-data-engineering">AWS Data Engineering</h5>
-<ul>
-<li>
-<p><a href="https://github.com/IndraT97/AWS_launched-Website-using-Networking-Services">Portfolio Website using AWS Networking Services</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/AWS-automated-Data-Cleaning-Pipeline">AWS MetaData Driven Data Cleaning Pipeline using Glue, Lambda, S3 and RedShift</a></p>
-</li>
-</ul>
-<h5 id="dbt-data-build-tool">dbt (Data Build Tool)</h5>
-<ul>
-<li>
-<p><a href="https://github.com/IndraT97/DBT-projects/tree/main/Project%201">Data Modeling on a sample dataset</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/DBT-projects">Data Modeling and Transformation on Real-world Airbnb dataset</a></p>
-</li>
-</ul>
-
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 p-0">
-                <div class="row row align-items-center justify-content-center m-1 mb-4">
-                    
-
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <small></small>
-                                </div>
-                                <h5 class="card-title">Machine Learning</h5>
-                                
-                                
-                                
-                                
-
-                                
-                                <div class="py-1 education-content">
-                                    <ul>
-<li>
-<p><a href="https://github.com/IndraT97/Machine-Learning-Projects/tree/main/Supervised%20Learning">Supervised Machine Learning</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Machine-Learning-Projects/tree/main/Unsupervised%20Learning">Unsupervised Machine Learning</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Machine-Learning-Projects/tree/main/Machine%20Learning%20With%20R">Machine Learning With R</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Machine-Learning-Projects">Experiment Tracking using ML-Flow</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Machine-Learning-Projects/tree/main/Statistics">Descriptive and Inferential Statistics</a></p>
-</li>
-</ul>
-
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 p-0">
-                <div class="row row align-items-center justify-content-center m-1 mb-4">
-                    
-
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <small></small>
-                                </div>
-                                <h5 class="card-title">SQL</h5>
-                                
-                                
-                                
-                                
-
-                                
-                                <div class="py-1 education-content">
-                                    <ul>
-<li>
-<p><a href="https://github.com/IndraT97/SQL/tree/main/Healthcare%20Data%20Analysis">Healthcare Data Analysis</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/SQL/tree/main/Walmart%20Data%20Analysis">Walmart Data Analysis</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/SQL/tree/main/Employee%20Data%20Management%20Analysis">Employee Data Management Analysis</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/SQL/tree/main/restaurant-ratings-analysis">Restaurant Rating Analysis</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/SQL/tree/main/SQL_Leetcode_Questions">SQL Leetcode</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/SQL/tree/main/HakerRank%20SQL">SQL HakerRank</a></p>
-</li>
-</ul>
-
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 p-0">
-                <div class="row row align-items-center justify-content-center m-1 mb-4">
-                    
-
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <small></small>
-                                </div>
-                                <h5 class="card-title">Data Visualization</h5>
-                                
-                                
-                                
-                                
-
-                                
-                                <div class="py-1 education-content">
-                                    <ul>
-<li>
-<p><a href="https://public.tableau.com/app/profile/indrajeet.satish.thakare/viz/Layoff2022-2023Summary/Dashboard">Tech Companies Layoffs</a></p>
-</li>
-<li>
-<p><a href="https://mavenanalytics.io/project/3404">Ecommerce Inventory Analysis</a></p>
-</li>
-<li>
-<p><a href="https://mavenanalytics.io/project/2761">Data Professional Survey Breakdown</a></p>
-</li>
-<li>
-<p><a href="https://public.tableau.com/app/profile/indrajeet.satish.thakare/viz/InstacartSalesAnalysis_16761318612240/Dashboard1">Instacart Sales Analysis</a></p>
-</li>
-<li>
-<p><a href="https://mavenanalytics.io/project/2628">Business Location Analysis by ArcGIS</a></p>
-</li>
-<li>
-<p><a href="https://mavenanalytics.io/project/17921">IPL (2008 - 2024) Summary Dashboard</a></p>
-</li>
-</ul>
-
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 p-0">
-                <div class="row row align-items-center justify-content-center m-1 mb-4">
-                    
-
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <small></small>
-                                </div>
-                                <h5 class="card-title">Web Scraping</h5>
-                                
-                                
-                                
-                                
-
-                                
-                                <div class="py-1 education-content">
-                                    <ul>
-<li>
-<p><a href="https://github.com/IndraT97/Web_Scraping/tree/main/Amazon%20Best%20Selling%20book%20Web%20Scraping">Amazon Best Selling Book Web Scraping</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Web_Scraping/tree/main/Flipkart%20web%20scrapping">Flipkart Web Scrapping</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Web_Scraping/tree/main/Github%20Web%20Scraping">Github Web Scraping</a></p>
-</li>
-</ul>
-
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 p-0">
-                <div class="row row align-items-center justify-content-center m-1 mb-4">
-                    
-
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <small></small>
-                                </div>
-                                <h5 class="card-title">Technological Proficiency</h5>
-                                
-                                
-                                
-                                
-
-                                
-                                <div class="py-1 education-content">
-                                    <ul>
-<li>
-<p><a href="https://github.com/IndraT97/Tech-Learning/tree/main/RBAC%20and%20Unity%20Catelog">Understanding Azure Unity Catalog and RBAC integration</a></p>
-</li>
-<li>
-<p><a href="https://github.com/IndraT97/Tech-Learning/tree/main/Spark%20Learning">Understanding Spark </a></p>
-</li>
-</ul>
-
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-
-<section id="achievements" class="py-5">
-    <div class="container">
-        <h3 class="text-center">Achievements</h3>
-        <div class="px-0 px-md-5 px-lg-5">
-            <div class="row justify-content-center px-3 px-md-5 px-lg-5">
-                
-                
-                <div class="col-lg-4 col-md-6 my-3">
-                    <a class="card my-3 h-100 p-3" href="https://www.credly.com/badges/a446b9c4-7883-4508-8f8a-20d9c69b3313/linked_in_profile" title="AWS Certified Solutions Architect – Associate" target="_blank">
-                        
-                            <div class="card-head">
-                                <img class="card-img-top" src="/images/AWS.png">
-                            </div>
-                        
-                        <div class="card-body bg-transparent">
-                            <h5 class="card-title bg-transparent">AWS Certified Solutions Architect – Associate</h5>
-                            <div class="card-text secondary-font">
-                                Issued on March 2024
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                
-                
-                <div class="col-lg-4 col-md-6 my-3">
-                    <a class="card my-3 h-100 p-3" href="https://www.credly.com/badges/5e4f2a57-4604-4df0-be67-a61e0c7e2bda/linked_in_profile" title="Alteryx Foundation Micro-Credential" target="_blank">
-                        
-                            <div class="card-head">
-                                <img class="card-img-top" src="/images/alteryx_new.png">
-                            </div>
-                        
-                        <div class="card-body bg-transparent">
-                            <h5 class="card-title bg-transparent">Alteryx Foundation Micro-Credential</h5>
-                            <div class="card-text secondary-font">
-                                Gained the expertise in transforming data using Alteryx.
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                
-                
-                <div class="col-lg-4 col-md-6 my-3">
-                    <a class="card my-3 h-100 p-3" href="https://credentials.databricks.com/6ea4cb16-f1a1-4f71-8797-8d5363cf07a8" title="DataBricks Genrative AI Fundamentals" target="_blank">
-                        
-                            <div class="card-head">
-                                <img class="card-img-top" src="/images/DBX.png">
-                            </div>
-                        
-                        <div class="card-body bg-transparent">
-                            <h5 class="card-title bg-transparent">DataBricks Genrative AI Fundamentals</h5>
-                            <div class="card-text secondary-font">
-                                Issued on Feb 2024
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                
-                
-                <div class="col-lg-4 col-md-6 my-3">
-                    <div class="card my-3 h-100 p-3" title="Azure Fundamentals (AZ-900)">
-                        
-                            <div class="card-head">
-                                <img class="card-img-top" src="/images/Azure.png">
-                            </div>
-                        
-                        <div class="card-body bg-transparent">
-                            <h5 class="card-title bg-transparent">Azure Fundamentals (AZ-900)</h5>
-                            <div class="card-text secondary-font">
-                                Issued on Feb 2024
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-                <div class="col-lg-4 col-md-6 my-3">
-                    <div class="card my-3 h-100 p-3" title="Azure Data Engineering Associate (DP-203)">
-                        
-                            <div class="card-head">
-                                <img class="card-img-top" src="/images/Azure.png">
-                            </div>
-                        
-                        <div class="card-body bg-transparent">
-                            <h5 class="card-title bg-transparent">Azure Data Engineering Associate (DP-203)</h5>
-                            <div class="card-text secondary-font">
-                                Issued on Feb 2024
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-                <div class="col-lg-4 col-md-6 my-3">
-                    <a class="card my-3 h-100 p-3" href="https://learn.microsoft.com/en-us/users/indrajeetthakare-1308/credentials/adf95981f26ae771?ref=https%3A%2F%2Fwww.linkedin.com%2F" title="Azure AI Fundamentals (AI-900)" target="_blank">
-                        
-                            <div class="card-head">
-                                <img class="card-img-top" src="/images/Azure.png">
-                            </div>
-                        
-                        <div class="card-body bg-transparent">
-                            <h5 class="card-title bg-transparent">Azure AI Fundamentals (AI-900)</h5>
-                            <div class="card-text secondary-font">
-                                Issued on Feb 2024
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                
-                
-                <div class="col-lg-4 col-md-6 my-3">
-                    <a class="card my-3 h-100 p-3" href="https://credentials.getdbt.com/b585d69b-e673-489f-a2db-6c69c4ad9cdd#gs.bw25iu" title="dbt Fundamentals" target="_blank">
-                        
-                            <div class="card-head">
-                                <img class="card-img-top" src="/images/dbt.png">
-                            </div>
-                        
-                        <div class="card-body bg-transparent">
-                            <h5 class="card-title bg-transparent">dbt Fundamentals</h5>
-                            <div class="card-text secondary-font">
-                                Issued on July 2024
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="py-5">
-    <div class="container">
-        <h3 class="text-center">Get in Touch</h3>
-        <div class="px-0 px-md-5 px-lg-5">
-            <div class="row justify-content-center px-md-5">
-                <div class="col-md-8 py-3">
-                    <div class="text-center">
-                        You can email me anytime! Whether you have questions or just want to connect, I&rsquo;ll get back to you as soon as I can.
-                    </div>
-                    
-                    <div class="text-center pt-3">
-                        <a 
-                            href='
-                                    mailto:ist220000@utdallas.edu
-                                  '
-                            target="_blank"
-                            class="btn"
-                        >
-                            Mail me
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="contact-form-status"></div>
-</section>
-
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="check-circle-fill" viewBox="0 0 16 16">
-    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-  </symbol>
-  <symbol id="info-fill" viewBox="0 0 16 16">
-    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-  </symbol>
-  <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
-    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-  </symbol>
-</svg>
-
-  </div><footer>
-    
- 
-
-<div class="text-center pt-2">
-    
-    <span class="px-1">
-        <a href="https://github.com/IndraT97" aria-label="github">
-            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
-                <path
-                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
-
-                <metadata>
-                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-                        <rdf:Description about="https://iconscout.com/legal#licenses"
-                            dc:title="Github, Online, Project, Hosting, Square"
-                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
-                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
-                            <dc:creator>
-                                <rdf:Bag>
-                                    <rdf:li>Font Awesome</rdf:li>
-                                </rdf:Bag>
-                            </dc:creator>
-                        </rdf:Description>
-                    </rdf:RDF>
-                </metadata>
-            </svg>
-        </a>
-    </span>
-    
-
-    
-    <span class="px-1">
-        <a href="https://www.linkedin.com/in/i97/" aria-label="linkedin">
-            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
-                viewBox="0 0 512 512">
-                <rect width="512" height="512" fill="#0077b5" rx="15%" />
-                <circle cx="142" cy="138" r="37" />
-                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
-                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
-            </svg>
-        </a>
-    </span>
-    
-
-    
-
-    
-    <a href="https://www.linkedin.com/in/i97/" aria-label="instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
-            <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
-                gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#fd5" />
-                <stop offset=".328" stop-color="#ff543f" />
-                <stop offset=".348" stop-color="#fc5245" />
-                <stop offset=".504" stop-color="#e64771" />
-                <stop offset=".643" stop-color="#d53e91" />
-                <stop offset=".761" stop-color="#cc39a4" />
-                <stop offset=".841" stop-color="#c837ab" />
-            </radialGradient>
-            <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
-                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
-            <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
-                gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#4168c9" />
-                <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
-            </radialGradient>
-            <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
-                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
-            <path fill="#fff"
-                d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
-            <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
-            <path fill="#fff"
-                d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
-        </svg>
-    </a>
-    
-
-    
-</div><div class="container py-4">
-    <div class="row justify-content-center">
-        <div class="col-md-4 text-center">
-            <div class="pb-2">
-                <a href="https://indrat97.github.io/" title="Indrajeet Thakare">
-                    <img alt="Footer logo" src="images/portimg.svg"
-                        height="40px" width="40px">
-                </a>
-            </div>
-            &copy; 2024  All Rights Reserved
-            <div class="text-secondary">
-                Made with
-                <span class="text-danger">
-                    &#10084;
-                </span>
-                
-            </div>
-        </div>
-    </div>
-</div></footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
-<script>
-    if (document.body.className.includes("light")) {
-        document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
-    }
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  <section id="search-content" class="py-2">
-    <div class="container" id="search-results"></div>
-  </section>
+<body>
+  <div id="root"></div>
+  <script src="portfolio-data.js"></script>
+  <script type="text/babel" src="portfolio-components.jsx"></script>
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(window.PortfolioApp));
+  </script>
 </body>
-
 </html>
